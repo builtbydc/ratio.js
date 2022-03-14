@@ -1,8 +1,4 @@
-const testCases = [
-	"new Ratio(1, 4).text();",
-	"new Ratio(2, 6).text();",
-	"new Ratio(2, 6).multiply(new Ratio(5, 4)).text();"
-];
+const testCases = [];
 
 let code = "";
 function updateCode(e) {
@@ -42,5 +38,5 @@ function displaySkeleton() {
 
 function displayResults() {
 	for (let i = 0; i < testCases.length; i++)
-		hput("rvar-test" + i, "<b> = " + eval(testCases[i]) + "</b>");
+		hput("rvar-test" + i, "<b> -> " + eval(testCases[i]) + "</b>");
 }
