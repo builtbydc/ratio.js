@@ -13,6 +13,7 @@ function sendCode() {
 	if(code !== "") {
 		testCases[testCases.length] = code;
 		displaySkeleton();
+		displayResults();
 	}
 }
 
@@ -25,6 +26,7 @@ function loaded() {
 	codeInput.addEventListener("input", updateCode);
 
 	displaySkeleton();
+	displayResults();
 }
 
 function displaySkeleton() {
