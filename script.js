@@ -12,12 +12,11 @@ function loaded() {
 }
 
 function displaySkeleton() {
-
 	let skeleton = "";
 	for (let i = 0; i < testCases.length; i++)
 		skeleton +=
 			"\t\t<div class=\"test-case\">\n" +
-			"\t\t\t\t<code>" + testCases[i] + "</code>\n" +
+			"\t\t\t<p class=\"ml-code\">" + testCases[i] + "</p>\n" +
 			"\t\t\t<p id=\"rvar-test" + i + "\"></p>\n" +
 			"\t\t</div>\n\n";
 	hput("test-cases", skeleton);
@@ -35,7 +34,6 @@ function hput(id, content) {
 let code = "";
 function updateCode(e) {
 	code = e.target.value;
-	console.log(code);
 }
 
 function sendCode() {
