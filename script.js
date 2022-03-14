@@ -24,7 +24,7 @@ const testCases = [
 
 function displaySkeleton() {
 	let skeleton = "";
-	for(let i = 0; i < testCases.length; i++)
+	for (let i = 0; i < testCases.length; i++)
 		skeleton +=
 			"\t\t<div class=\"test-case\">\n" +
 			"\t\t\t<code>" + testCases[i] + ";</code>\n" +
@@ -35,10 +35,10 @@ function displaySkeleton() {
 }
 
 function displayResults() {
-	for(let i = 0; i < testCases.length; i++)
+	for (let i = 0; i < testCases.length; i++)
 		hput("rvar-test" + i, eval(testCases[i]));
 }
 
 function hput(id, content) {
-    document.getElementById(id).innerHTML = content;
+	document.getElementById(id).innerHTML = content;
 }

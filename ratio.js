@@ -1,65 +1,74 @@
 class Ratio {
-    constructor(numerator, denominator) {
-        this.numerator = numerator;
-        this.denominator = denominator;
-        this.simplify();
-    }
+	constructor(numerator, denominator) {
+		this.numerator = numerator;
+		this.denominator = denominator;
+		this.simplify();
+	}
 
-    simplify() {
-        let n = Math.abs(this.numerator);
-        let d = Math.abs(this.denominator);
-        while(d) {
-          var t = d;
-          d = n % d;
-          n = t;
-        }
+	simplify() {
+		let n = Math.abs(this.numerator);
+		let d = Math.abs(this.denominator);
+		while (d) {
+			var t = d;
+			d = n % d;
+			n = t;
+		}
 
-		if(n) {
+		if (n) {
 			this.numerator = this.numerator / n;
 			this.denominator = this.denominator / n;
 		}
 
-		if(this.denominator < 0) {
+		if (this.denominator < 0) {
 			this.numerator = this.numerator * -1;
 			this.denominator = this.denominator * -1;
 		}
-    }
+	}
 
-    add(other) {
-        let n1 = this.numerator;
-        let d1 = this.denominator;
-        let n2 = other.numerator;
-        let d2 = other.denominator;
+	add(other) {
+		let n1 = this.numerator;
+		let d1 = this.denominator;
+		let n2 = other.numerator;
+		let d2 = other.denominator;
 
 		n1 = n1 * d2;
 		n2 = n2 * d1;
 		d1 = d1 * d2;
 
 		return new Ratio(n1 + n2, d1);
-    }
+	}
 
 	subtract(other) {
 		return this.add(new Ratio(-other.numerator, other.denominator));
 	}
 
-    multiply(other) {
-        return new Ratio(this.numerator * other.numerator, this.denominator * other.denominator);
-    }
-
-    divide(other) {
-        return new Ratio(this.numerator * other.denominator, this.denominator * other.numerator);
-    }
-
-	equals(other) {
-		return this.numerator === other.numerator && this.denominator === other.denominator;
+	multiply(other) {
+		return new Ratio(
+			this.numerator * other.numerator,
+			this.denominator * other.denominator
+		);
 	}
 
-    toText() {
-        if(this.denominator === 1) return this.numerator;
-        return this.numerator + "/" + this.denominator;
-    }
+	divide(other) {
+		return new Ratio(
+			this.numerator * other.denominator,
+			this.denominator * other.numerator
+		);
+	}
 
-    toFloat() {
-        return this.numerator / this.denominator;
-    }
+	equals(other) {
+		return (
+			this.numerator === other.numerator &&
+			this.denominator === other.denominator
+		);
+	}
+
+	toText() {
+		if (this.denominator === 1) return this.numerator;
+		return this.numerator + "/" + this.denominator;
+	}
+
+	toFloat() {
+		return this.numerator / this.denominator;
+	}
 }
