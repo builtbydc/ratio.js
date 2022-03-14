@@ -56,6 +56,10 @@ class Ratio {
 		);
 	}
 
+	invert() {
+		return new Ratio(1, 1).divide(new Ratio(this.numerator, this.denominator));
+	}
+
 	equals(other) {
 		return (
 			this.numerator === other.numerator &&
@@ -63,12 +67,12 @@ class Ratio {
 		);
 	}
 
-	toText() {
+	text() {
 		if (this.denominator === 1) return this.numerator;
 		return this.numerator + "/" + this.denominator;
 	}
 
-	toFloat() {
+	approximate() {
 		return this.numerator / this.denominator;
 	}
 }

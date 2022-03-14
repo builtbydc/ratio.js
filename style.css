@@ -22,6 +22,8 @@ h1 {
 
 button {
 	font-size: 1rem;
+	font-family: serif;
+	font-weight: bold;
 
 	border: 1px inset black;
 	border-radius: 0.25rem;
@@ -37,7 +39,7 @@ button {
 }
 
 .test-case {
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 }
 
 .ml-code {
@@ -48,6 +50,10 @@ button {
 
 .test-case>p {
 	display: inline;
+}
+
+.result {
+	color: green;
 }
 
 .input-block {
