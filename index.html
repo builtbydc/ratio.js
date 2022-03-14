@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <title>ratio.js</title>
+
+    <script src="./ratio.js"></script>
+    <script src="./script.js"></script>
+	
+    <style>
+        * {
+            margin: 0;
+            line-height: 1;
+        }
+
+        .subtitle-block {
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .subtitle-block > h2 {
+            display: inline;
+        }
+        .subtitle-block > button {
+            display: inline;
+            font-size: 1em;
+            padding: 0;
+            border: 1px inset black;
+            border-radius: 0.25em;
+            padding: 0.25em;
+
+            background-color: lightgray;
+
+            cursor: pointer;
+        }
+        
+        .test-case {
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .test-case > code {
+            display: inline;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            background-color: lightgray;
+        }
+        .test-case > p {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body onload="displaySkeleton();">
+    <h1>ratio.js</h1>
+
+    <div class="subtitle-block">
+        <h2>Test Cases</h2>
+        <button onclick="displayResults();">See Results</button>
+    </div>
+
+	<div id="test-cases"></div>
+</body>
