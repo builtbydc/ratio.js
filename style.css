@@ -15,26 +15,6 @@ h2 {
 	margin-bottom: 1rem;
 }
 
-button {
-	font-size: 1rem;
-	font-family: serif;
-	font-weight: bold;
-
-	padding-left: 0.25rem;
-	padding-right: 0.25rem;
-
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-
-	border: none;
-
-	height: 5rem;
-
-	background-color: lightgray;
-
-	cursor: pointer;
-}
-
 .test-case {
 	margin-bottom: 0.5rem;
 }
@@ -64,10 +44,30 @@ textarea {
 	font-family: monospace;
 	font-size: 1rem;
 	height: 4.5rem;
-	width: 29.5rem;
+	width: 37rem;
 
 	padding: 0.25rem;
 
 	border: none;
 	background-color: lightyellow;
+}
+
+button {
+	font-size: 1rem;
+	font-family: serif;
+	font-weight: bold;
+	color: black;
+
+	min-width: 6rem;
+
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+	border: none;
+
+	height: 5rem;
+
+	background-color: lightgray;
+
+	cursor: pointer;
 }

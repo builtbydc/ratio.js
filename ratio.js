@@ -72,7 +72,7 @@ class Ratio {
 		return this.numerator + "/" + this.denominator;
 	}
 
-	approximate() {
+	number() {
 		return this.numerator / this.denominator;
 	}
 }
