@@ -21,7 +21,7 @@ h2 {
 
 .ml-code {
 	font-family: monospace;
-	white-space:pre-line;
+	white-space: pre-line;
 	background-color: lightgray;
 }
 
@@ -43,10 +43,8 @@ h2 {
 textarea {
 	font-family: monospace;
 	font-size: 1rem;
-	height: 4.5rem;
-	width: 37rem;
-
-	padding: 0.25rem;
+	height: 5rem;
+	width: 100vw;
 
 	border: none;
 	background-color: lightyellow;

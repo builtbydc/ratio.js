@@ -5,6 +5,53 @@ class Ratio {
 		this.simplify();
 	}
 
+	static fromFloat(number, optionalTuning) {
+		if (optionalTuning === undefined) optionalTuning = 8;
+
+		let head = Math.floor(number);
+		let tail = number - head;
+
+		let pow10;
+		for (let i = 0; ; i++) {
+			pow10 = Math.pow(10, i);
+			let temp = tail * pow10;
+			if (Math.floor(temp) === temp) break;
+		}
+
+		let bestNumerator;
+		let bestDenominator;
+		let approx = 2;
+		let found = false;
+
+		if (pow10 >= Math.pow(10, optionalTuning)) {
+
+			let maxDen = Math.min(pow10, Math.pow(10, 14 - optionalTuning));
+			for (let den = 1; den < maxDen; den++) {
+				for (let num = Math.floor(tail * den); num <= Math.ceil(tail * den); num++) {
+
+					approx = num / den;
+
+					let err1 = 0.5 / pow10;
+					if (Math.abs(approx - tail) <= err1) {
+						bestNumerator = num;
+						bestDenominator = den;
+						found = true;
+						break;
+					}
+				}
+				if (found) break;
+			}
+		}
+
+		let err2 = 1 / Math.pow(10, optionalTuning);
+		if (Math.abs(approx - tail) > err2 || !found) {
+			bestNumerator = Math.floor(tail * pow10);
+			bestDenominator = pow10;
+		}
+
+		return new Ratio(head * bestDenominator + bestNumerator, bestDenominator);
+	}
+
 	simplify() {
 		let n = Math.abs(this.numerator);
 		let d = Math.abs(this.denominator);
